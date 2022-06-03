@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start-prod": "node app.ts",
+    "build": "webpack --mode production",
     "test": "jest",
     "lint": "eslint \"./src/**/*.{ts,tsx}\""
   },
+  "main": "dist/index.js",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -15,6 +17,7 @@
     ]
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.17.12",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.6.3",
@@ -24,6 +27,7 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
     "@types/react-router-dom": "^5.3.3",
+    "express": "^4.18.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
@@ -32,15 +36,27 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-runtime": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
+    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
+    "babel-jest": "^28.1.0",
+    "babel-loader": "^8.2.5",
     "eslint": "^8.16.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.11",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "style-loader": "^3.3.1",
     "ts-jest": "^28.0.3",
-    "ts-node": "^10.8.0"
+    "ts-node": "^10.8.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
   },
   "browserslist": {
     "production": [

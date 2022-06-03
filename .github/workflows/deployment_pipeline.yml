@@ -16,6 +16,17 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        id: deploy
+        if: ${{ github.event_name == 'push' && contains(join(github.event.commits.*.message), '#deploy') }}
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "aqueous-anchorage-99787"
+          heroku_email: "topias.peiponen@gmail.com"
+          healthcheck: "http://aqueous-anchorage-99787.herokuapp.com/health"
+          checkstring: "ok"
+          delay: 10
+          rollbackonhealthcheckfailed: true
       - name: npm install 
         run: npm install   
       - name: lint
@@ -34,7 +45,7 @@ jobs:
           fetch-depth: '0'
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.36.0
-        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
+        if: ${{ github.event_name == 'push' && contains(join(github.event.commits.*.message), '#deploy') }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch

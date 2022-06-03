@@ -1,8 +1,12 @@
+import React from 'react';
+import Container from "@mui/material/Container"
+import HomeBanner from "./HomeBanner"
+
 const Home = () => {
     return (
-        <div>
-            Huutikset
-        </div>
+        <Container maxWidth="lg">
+            <HomeBanner />
+        </Container>
     )
 }
 
