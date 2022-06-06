@@ -12,4 +12,5 @@ The project is written in Typescript and uses the following libraries/frameworks
 - Jest
 - Webpack
 
-- Topias Peiponen
+
+Topias Peiponen
