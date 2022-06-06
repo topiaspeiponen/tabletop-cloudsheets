@@ -4,4 +4,12 @@ Tabletop Cloudsheets is a RPG character management platform built for use with d
 
 You can check out the current production version at: https://tabletop-cloudsheets.herokuapp.com/
 
+The project is written in Typescript and uses the following libraries/frameworks:
+- React
+- Material UI
+- Redux
+- Express
+- Jest
+- Webpack
+
 - Topias Peiponen
