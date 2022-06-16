@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Box, Grid, Paper, TextField } from '@mui/material'
 import CheckboxSkillBlock from './CheckboxSkillBlock'
 import MainAttributeBlock from './MainAttributeBlock'

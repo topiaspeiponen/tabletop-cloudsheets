@@ -1,16 +1,17 @@
+import * as React from 'react'
 import { Container } from '@mui/material'
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 import { useAppSelector } from '../hooks'
 import { GameSystems } from '../types/data'
 import { assertNever } from '../utils/exhaustive_type_checker'
-import { loadPdf } from '../utils/pdf_helpers'
+//import { loadPdf } from '../utils/pdf_helpers'
 import SheetContainer from './sheet_5e/SheetContainer'
 
 
 const CharacterEditor = () => {
 	const characterSheet = useAppSelector(state => state.characterSheet)
 
-	useEffect(() => {
+	/*useEffect(() => {
 		let fileName = ''
 		switch (characterSheet.character.gameSystem) {
 		case GameSystems.DND5E:
@@ -26,7 +27,7 @@ const CharacterEditor = () => {
 		loadPdf(fileName).then(pdfInfo => {
 			console.log('PDF info ', pdfInfo)
 		})
-	}, [])
+	}, [])*/
 
 	switch (characterSheet.character.gameSystem) {
 	case GameSystems.DND5E: {
