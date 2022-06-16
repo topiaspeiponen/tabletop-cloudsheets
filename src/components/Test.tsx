@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const Test = () => {
-    return (
-        <div>
+	return (
+		<div>
             Big testing unit
-        </div>
-    )
+		</div>
+	)
 }
 
 export default Test
