@@ -38,7 +38,7 @@ const CharacterEditor = () => {
 	}
 	case GameSystems.PF2E: {
 		return (
-			<div>PF 2 e</div>
+			<div>PF 2e</div>
 		)
 	}
 	default:
