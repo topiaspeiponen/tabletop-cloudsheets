@@ -1,6 +1,8 @@
 import React from 'react'
 import { Tab, Tabs } from '@mui/material'
 import PrimarySheet from './PrimarySheet'
+import BackgroundSheet from './BackgroundSheet'
+import SpellsSheet from './SpellsSheet'
 
 
 const SheetContainer = () => {
@@ -18,11 +20,11 @@ const SheetContainer = () => {
 			)
 		case 1:
 			return (
-				<div>Background sheet</div>
+				<BackgroundSheet />
 			)
 		case 2:
 			return (
-				<div>Spells </div>
+				<SpellsSheet />
 			)
 		default:
 			return null

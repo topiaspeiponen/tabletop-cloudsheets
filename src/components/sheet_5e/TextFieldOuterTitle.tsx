@@ -6,7 +6,8 @@ interface TextFieldRightTitleProps {
     titleDirection: Directions,
     size?: 'normal' | 'large'
     multiline?: boolean,
-    textFieldStyle?: React.CSSProperties
+    textFieldStyle?: React.CSSProperties,
+	fillHeight?: boolean
 }
 
 export enum Directions {
@@ -55,8 +56,8 @@ const TextFieldOuterTitle = (props : TextFieldRightTitleProps) => {
 		)
 	case 'bottom':
 		return (
-			<Box sx={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
-				<TextField sx={{ ...props.textFieldStyle, width: '100%', input: { textAlign: 'center' } }} id={`${props.title.toLowerCase()}-field`} variant="outlined" multiline={props.multiline} />
+			<Box sx={props.fillHeight ? { display: 'flex', flexFlow: 'column nowrap', alignItems: 'center', height: '100%' } : { display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
+				<TextField sx={ props.fillHeight ? { ...props.textFieldStyle, width: '100%', height: '100%', input: { textAlign: 'center' }, div: { height: '100%' } } : { ...props.textFieldStyle, width: '100%', input: { textAlign: 'center' } }} id={`${props.title.toLowerCase()}-field`} variant="outlined" multiline={props.multiline} />
 				<Typography>
 					{props.title}
 				</Typography>

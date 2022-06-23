@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Grid, Paper, TextField } from '@mui/material'
+import { Box, Checkbox, Grid, Paper, TextField, Typography } from '@mui/material'
 import CheckboxSkillBlock from './CheckboxSkillBlock'
 import MainAttributeBlock from './MainAttributeBlock'
 import StackedTextFields from './StackedTextFields'
@@ -14,19 +14,31 @@ const PrimarySheet = () => {
 					<TextField id="character-name" label="Character name" variant="outlined" />
 				</Grid>
 				<Grid item xs={8}>
-					<Box sx={{ display: 'flex', flexFlow: 'row wrap', gap: '8px' }}>
-						<TextField id="class-level" label="Class level" variant="outlined" />
-						<TextField id="background" label="Background" variant="outlined" />
-						<TextField id="player-name" label="Player name" variant="outlined" />
-						<TextField id="race" label="Race" variant="outlined" />
-						<TextField id="alignment" label="Alignment" variant="outlined" />
-						<TextField id="experience-points" label="Experience points" variant="outlined" />
-					</Box>
-				</Grid>
-				<Grid item xs={12}>
 					<Grid container spacing={2}>
 						<Grid item xs={4}>
-							<Grid container spacing={1}>
+							<TextField id="class-level" label="Class level" variant="outlined" />
+						</Grid>
+						<Grid item xs={4}>
+							<TextField id="background" label="Background" variant="outlined" />
+						</Grid>
+						<Grid item xs={4}>
+							<TextField id="player-name" label="Player name" variant="outlined" />
+						</Grid>
+						<Grid item xs={4}>
+							<TextField id="race" label="Race" variant="outlined" />
+						</Grid>
+						<Grid item xs={4}>
+							<TextField id="alignment" label="Alignment" variant="outlined" />
+						</Grid>
+						<Grid item xs={4}>
+							<TextField id="experience-points" label="Experience points" variant="outlined" />
+						</Grid>
+					</Grid>
+				</Grid>
+				<Grid item xs={12}>
+					<Grid container spacing={4} sx={{ height: '100%' }}>
+						<Grid item md={4} xs={12} sx={{ height: '100%' }}>
+							<Grid container spacing={1} sx={{ height: '100%' }}>
 								<Grid item xs={4}>
 									<Box sx={{ display: 'flex', flexFlow: 'column nowrap', gap: '16px' }}>
 										<MainAttributeBlock attributeName="Strength" />
@@ -61,9 +73,15 @@ const PrimarySheet = () => {
 										<CheckboxSkillBlock skillName="Survival" />
 									</Box>
 								</Grid>
+								<Grid item xs={12}>
+									<TextFieldOuterTitle title="Passive wisdom (perception)" titleDirection={Directions.RIGHT} />
+								</Grid>
+								<Grid item xs={12}>
+									<TextFieldOuterTitle title="Other proficiencies & languages" titleDirection={Directions.BOTTOM} multiline fillHeight />
+								</Grid>
 							</Grid>
 						</Grid>
-						<Grid item xs={4}>
+						<Grid item md={4} xs={12} sx={{ height: '100%' }}>
 							<Grid container spacing={2}>
 								<Grid item xs={4}>
 									<TextFieldOuterTitle title="Armor class" titleDirection={Directions.BOTTOM} />
@@ -77,10 +95,188 @@ const PrimarySheet = () => {
 								<Grid item xs={12}>
 									<StackedTextFields topTitle="Hit point maximum" bottomTitle="Current hit points" />
 								</Grid>
+								<Grid item xs={12}>
+									<TextFieldOuterTitle title="Temporary Hit Points" titleDirection={Directions.BOTTOM} />
+								</Grid>
+								<Grid item xs={6}>
+									<StackedTextFields topTitle="Total" bottomTitle="Hit dice" />
+								</Grid>
+								<Grid item xs={6}>
+									<Grid container spacing={1}>
+										<Grid item xs={12}>
+											<Grid container sx={{ alignItems: 'center' }}>
+												<Grid item xs={6}>
+													<Typography>
+														Successes
+													</Typography>
+												</Grid>
+												<Grid item xs={2}>
+													<Checkbox />
+												</Grid>
+												<Grid item xs={2}>
+													<Checkbox />
+												</Grid>
+												<Grid item xs={2}>
+													<Checkbox />
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid item xs={12}>
+											<Grid container sx={{ alignItems: 'center' }}>
+												<Grid item xs={6}>
+													<Typography>
+														Failures
+													</Typography>
+												</Grid>
+												<Grid item xs={2}>
+													<Checkbox />
+												</Grid>
+												<Grid item xs={2}>
+													<Checkbox />
+												</Grid>
+												<Grid item xs={2}>
+													<Checkbox />
+												</Grid>
+											</Grid>
+										</Grid>
+									</Grid>
+								</Grid>
+								<Box>
+									<Grid container spacing={1}>
+										<Grid item xs={5}>
+											<Grid container>
+												<Grid item xs={12}>
+													<Typography variant='body2'>
+														Name
+													</Typography>
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid item xs={2}>
+											<Grid container>
+												<Grid item xs={12}>
+													<Typography variant="body2">
+														Atk bonus
+													</Typography>
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid item xs={5}>
+											<Grid container>
+												<Grid item xs={12}>
+													<Typography variant="body2">
+														Damage/type
+													</Typography>
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+												<Grid item xs={12}>
+													<TextField />
+												</Grid>
+											</Grid>
+										</Grid>
+										<Grid item xs={12}>
+											<TextFieldOuterTitle title="Attacks & spellcasting" titleDirection={Directions.BOTTOM} multiline />
+										</Grid>
+										<Grid item xs={12}>
+											<Grid container spacing={1}>
+												<Grid item xs={3}>
+													<Grid container>
+														<Grid item xs={12}>
+															<Grid container>
+																<Grid item xs={4}>
+																	<Typography>
+																		CP
+																	</Typography>
+																</Grid>
+																<Grid item xs={8}>
+																	<TextField />
+																</Grid>
+															</Grid>
+														</Grid>
+														<Grid item xs={12}>
+															<Grid container>
+																<Grid item xs={4}>
+																	<Typography>
+																		SP
+																	</Typography>
+																</Grid>
+																<Grid item xs={8}>
+																	<TextField />
+																</Grid>
+															</Grid>
+														</Grid>
+														<Grid item xs={12}>
+															<Grid container>
+																<Grid item xs={4}>
+																	<Typography>
+																		GP
+																	</Typography>
+																</Grid>
+																<Grid item xs={8}>
+																	<TextField />
+																</Grid>
+															</Grid>
+														</Grid>
+														<Grid item xs={12}>
+															<Grid container>
+																<Grid item xs={4}>
+																	<Typography>
+																		EP
+																	</Typography>
+																</Grid>
+																<Grid item xs={8}>
+																	<TextField />
+																</Grid>
+															</Grid>
+														</Grid>
+														<Grid item xs={12}>
+															<Grid container>
+																<Grid item xs={4}>
+																	<Typography>
+																		PP
+																	</Typography>
+																</Grid>
+																<Grid item xs={8}>
+																	<TextField />
+																</Grid>
+															</Grid>
+														</Grid>
+													</Grid>
+												</Grid>
+												<Grid item xs={9}>
+													<TextFieldOuterTitle title="Equipment" titleDirection={Directions.BOTTOM} multiline fillHeight />
+												</Grid>
+											</Grid>
+										</Grid>
+									</Grid>
+								</Box>
 							</Grid>
 						</Grid>
-						<Grid item xs={4}>
-							<Grid container spacing={2}>
+						<Grid item md={4} xs={12}>
+							<Grid container spacing={2} sx={{ height: '100%', alignContent: 'flex-start' }}>
 								<Grid item xs={12}>
 									<TextFieldOuterTitle title="Personality traits" titleDirection={Directions.BOTTOM} multiline />
 								</Grid>
@@ -94,7 +290,7 @@ const PrimarySheet = () => {
 									<TextFieldOuterTitle title="Flaws" titleDirection={Directions.BOTTOM} multiline />
 								</Grid>
 								<Grid item xs={12}>
-									<TextFieldOuterTitle title="Features & traits" titleDirection={Directions.BOTTOM} multiline textFieldStyle={{ height: '100%' }} />
+									<TextFieldOuterTitle title="Features & traits" titleDirection={Directions.BOTTOM} multiline textFieldStyle={{ height: '100%' }} fillHeight />
 								</Grid>
 							</Grid>
 						</Grid>
