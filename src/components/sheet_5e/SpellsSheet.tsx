@@ -1,4 +1,6 @@
+import * as React from 'react'
 import { Grid, Paper, TextField, Typography } from '@mui/material'
+import CheckboxSpell from './CheckboxSpell'
 import TextFieldOuterTitle, { Directions } from './TextFieldOuterTitle'
 
 
@@ -47,14 +49,115 @@ const SpellsSheet = () => {
                                         Cantrips
 									</Typography>
 								</Grid>
-								{}
+								{[...Array(maxCantrips)].map((_, index) => <CheckboxSpell key={`cantrip-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+                                        1
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+                                        Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxFirstLevel)].map((_, index) => <CheckboxSpell key={`first-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+                                        2
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+                                        Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxSecondLevel)].map((_, index) => <CheckboxSpell key={`second-${index.toString()}`} />)}
 							</Grid>
 						</Grid>
 						<Grid item xs={4}>
-
+							<Grid container spacing={1}>
+								<Grid item xs={2}>
+									<Typography>
+											3
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxThirdLevel)].map((_, index) => <CheckboxSpell key={`third-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+											4
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxFourthLevel)].map((_, index) => <CheckboxSpell key={`fourth-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+											5
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxFifthLevel)].map((_, index) => <CheckboxSpell key={`fifth-${index.toString()}`} />)}
+							</Grid>
 						</Grid>
 						<Grid item xs={4}>
-
+							<Grid container spacing={1}>
+								<Grid item xs={2}>
+									<Typography>
+											6
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxSixthLevel)].map((_, index) => <CheckboxSpell key={`sixth-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+											7
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxSeventhLevel)].map((_, index) => <CheckboxSpell key={`seventh-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+											8
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxEigthLevel)].map((_, index) => <CheckboxSpell key={`eight-${index.toString()}`} />)}
+								<Grid item xs={2}>
+									<Typography>
+											9
+									</Typography>
+								</Grid>
+								<Grid item xs={10}>
+									<Typography>
+												Spells
+									</Typography>
+								</Grid>
+								{[...Array(maxNinthLevel)].map((_, index) => <CheckboxSpell key={`ninth-${index.toString()}`} />)}
+							</Grid>
 						</Grid>
 					</Grid>
 				</Grid>

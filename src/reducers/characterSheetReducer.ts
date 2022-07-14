@@ -17,6 +17,10 @@ const characterSheetSlice = createSlice({
 		setCharacterSheet(state, action : PayloadAction<CharacterSheet>) {
 			state = action.payload
 			return state
+		},
+		editCharacterSheet(state, action : PayloadAction<CharacterSheet>) {
+			state = action.payload
+			return state
 		}
 	}
 })
